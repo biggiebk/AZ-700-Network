@@ -74,17 +74,21 @@ Azure public IP addresses can be deployed with different zone configurations to 
   - Provides basic availability without explicit zone control.
   - Supported in both **Basic** and **Standard** SKUs.
 
-![No Zone](diagrams/IP.excalidraw.png)
+![No Zone](diagrams/IP-NoZone.excalidraw.png)
 
 - **Zone-Redundant**:
   - Ensures resiliency by replicating the public IP across multiple zones.
   - Supported only in the **Standard** SKU.
   - Provides higher availability for mission-critical workloads.
 
+![Zone Redundant](diagrams/IP-ZoneRedundant.excalidraw.png)
+
 - **Zonal**:
   - The public IP is tied to a specific zone (e.g., Zone 1, Zone 2, or Zone 3).
   - Provides control over the zone placement of resources.
   - Supported only in the **Standard** SKU.
+
+![Zonal](diagrams/IP-Zonal.excalidraw.png)
 
 ### Notes:
 - **Zone-Redundant and Zonal IPs** are only available in regions that support availability zones.
