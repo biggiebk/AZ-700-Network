@@ -1,6 +1,3 @@
-# AZ-700-Network
-Notes on Azure Networking
-
 Instructor: Anja Thelen
 
 # Hours
