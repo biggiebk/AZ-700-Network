@@ -1,5 +1,50 @@
 # Design and implement core networking infrastructure
 
+## Table of Contents
+
+1. [Design and implement IP addressing for Azure resources](#design-and-implement-ip-addressing-for-azure-resources)
+   - [Plan and Implement Network Segmentation and Address Spaces](#plan-and-implement-network-segmentation-and-address-spaces)
+   - [Create a Virtual Network (VNet)](#create-a-virtual-network-vnet)
+   - [Plan and Configure Subnetting for Services](#plan-and-configure-subnetting-for-services)
+   - [Plan and Configure Subnet Delegation](#plan-and-configure-subnet-delegation)
+   - [Plan and Configure Shared or Dedicated Subnets](#plan-and-configure-shared-or-dedicated-subnets)
+   - [Create a Prefix for Public IP Addresses](#create-a-prefix-for-public-ip-addresses)
+   - [Choose When to Use a Public IP Address Prefix](#choose-when-to-use-a-public-ip-address-prefix)
+   - [Plan and Implement a Custom Public IP Address Prefix (BYOI)](#plan-and-implement-a-custom-public-ip-address-prefix-bring-your-own-ip---byoi)
+   - [Create a Public IP Address](#create-a-public-ip-address)
+   - [Associate Public IP Addresses to Resources](#associate-public-ip-addresses-to-resources)
+
+2. [Design and implement name resolution](#design-and-implement-name-resolution)
+   - [Design Name Resolution Inside a VNet](#design-name-resolution-inside-a-vnet)
+   - [Configure DNS Settings for a VNet](#configure-dns-settings-for-a-vnet)
+   - [Design Public DNS Zones](#design-public-dns-zones)
+   - [Design Private DNS Zones](#design-private-dns-zones)
+   - [Configure Public and Private DNS Zones](#configure-public-and-private-dns-zones)
+   - [Link a Private DNS Zone to a VNet](#link-a-private-dns-zone-to-a-vnet)
+   - [Design and Implement Azure DNS Private Resolver](#design-and-implement-azure-dns-private-resolver)
+
+3. [Design and implement VNet connectivity and routing](#design-and-implement-vnet-connectivity-and-routing)
+   - [Service Chaining with Gateway Transit](#service-chaining-with-gateway-transit)
+   - [VNet Peering](#vnet-peering)
+   - [Azure Virtual Network Manager](#azure-virtual-network-manager)
+   - [User-Defined Routes (UDRs)](#user-defined-routes-udrs)
+   - [Associating Route Table with Subnet](#associating-route-table-with-subnet)
+   - [Forced Tunneling](#forced-tunneling)
+   - [Diagnosing and Resolving Routing Issues](#diagnosing-and-resolving-routing-issues)
+   - [Azure Route Server](#azure-route-server)
+   - [Network Address Translation (NAT) Gateway](#network-address-translation-nat-gateway)
+
+4. [Monitor networks](#monitor-networks)
+   - [Configure Monitoring, Network Diagnostics, Next Hop, and Path Visualization in Azure Network Watcher](#configure-monitoring-network-diagnostics-next-hop-and-path-visualization-in-azure-network-watcher)
+   - [Monitor and Troubleshoot Network Health by Using Azure Network Watcher](#monitor-and-troubleshoot-network-health-by-using-azure-network-watcher)
+   - [Monitor and Troubleshoot Networks by Using Azure Monitor Network Insights](#monitor-and-troubleshoot-networks-by-using-azure-monitor-network-insights)
+   - [Activating and Monitoring DDoS Protection](#activating-and-monitoring-ddos-protection)
+   - [Evaluating Network Security Recommendations from Microsoft Defender for Cloud Secure Score](#evaluating-network-security-recommendations-from-microsoft-defender-for-cloud-secure-score)
+   - [Evaluating Network Security Recommendations from Attack Path Analysis](#evaluating-network-security-recommendations-from-attack-path-analysis)
+   - [Identifying Network Resources with Security Explorer](#identifying-network-resources-with-security-explorer)
+
+---
+
 ## Design and implement IP addressing for Azure resources
 
 ### Plan and Implement Network Segmentation and Address Spaces
