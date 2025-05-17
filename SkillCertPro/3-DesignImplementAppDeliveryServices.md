@@ -1,18 +1,59 @@
 # Design and Implement Application Delivery Services
 
-## Design and i=Implement Azure Load Balancer and Azure Traffic Manager
+## Table of Contents
+
+1. [Design and Implement Azure Load Balancer and Azure Traffic Manager](#design-and-implement-azure-load-balancer-and-azure-traffic-manager)
+   - [Mapping Requirements to Azure Load Balancer Features](#mapping-requirements-to-azure-load-balancer-features)
+   - [Identifying Use Cases for Azure Load Balancer](#identifying-use-cases-for-azure-load-balancer)
+   - [Choosing an Azure Load Balancer SKU and Tier](#choosing-an-azure-load-balancer-sku-and-tier)
+   - [Public vs. Internal Load Balancers](#public-vs-internal-load-balancers)
+   - [Regional vs. Global Load Balancers](#regional-vs-global-load-balancers)
+   - [Azure Load Balancer](#azure-load-balancer)
+   - [Azure Traffic Manager (ATM)](#azure-traffic-manager-atm)
+
+2. [Design and Implement Azure Application Gateway](#design-and-implement-azure-application-gateway)
+   - [Mapping Requirements to Features](#mapping-requirements-to-features)
+   - [Use Cases for Azure Application Gateway](#use-cases-for-azure-application-gateway)
+   - [Manual vs. Autoscale](#manual-vs-autoscale)
+   - [Creating a Backend Pool](#creating-a-backend-pool)
+   - [Configuring Health Probes](#configuring-health-probes)
+   - [Listeners](#listeners)
+   - [Routing Rules](#routing-rules)
+   - [HTTP Settings](#http-settings)
+   - [Transport Layer Security (TLS)](#transport-layer-security-tls)
+   - [Rewrite Sets](#rewrite-sets)
+
+3. [Design and Implement Azure Front Door](#design-and-implement-azure-front-door)
+   - [Mapping Requirements to Features](#mapping-requirements-to-features-1)
+   - [Identify Use Cases](#identify-use-cases)
+   - [Choosing an Appropriate Tier](#choosing-an-appropriate-tier)
+   - [Configuring Azure Front Door](#configuring-azure-front-door)
+   - [Configuring SSL Termination and Encryption](#configuring-ssl-termination-and-encryption)
+   - [Azure Front Door](#azure-front-door)
+   - [Configuring Caching](#configuring-caching)
+   - [Benefits of Caching](#benefits-of-caching)
+   - [Configuring Traffic Acceleration](#configuring-traffic-acceleration)
+   - [Benefits of Traffic Acceleration](#benefits-of-traffic-acceleration)
+   - [Implementing Rules, URL Rewrite, and URL Redirect](#implementing-rules-url-rewrite-and-url-redirect)
+   - [Benefits of Rules, URL Rewrite, and URL Redirect](#benefits-of-rules-url-rewrite-and-url-redirect)
+   - [Securing an Origin with Azure Private Link](#securing-an-origin-with-azure-private-link)
+   - [Additional Considerations](#additional-considerations)
+
+---
+
+## Design and Implement Azure Load Balancer and Azure Traffic Manager
 
 ### Mapping Requirements to Azure Load Balancer Features
 
-* **Hight Availability:** Load Balancer distributes traffic across healthy VMs in a pool, ensuring service remains available even if one VM fails.
-* **Scalability:** It automatically scales resources up or down on traffic volume.
+* **High Availability:** Load Balancer distributes traffic across healthy VMs in a pool, ensuring service remains available even if one VM fails.
+* **Scalability:** It automatically scales resources up or down based on traffic volume.
 * **Health Monitoring:** Continuously monitors VM health and removes unhealthy ones from the pool.
 * **Load Distribution:** Balances traffic across VMs using various methods (round robin, weight, etc.).
 * **Security:** Supports inbound and outbound traffic rules for granular control.
 
 ### Identifying Use Cases for Azure Load Balancer
 
-* **Web applications:** Distributes traffic across web servers for hight availability and performance.
+* **Web applications:** Distributes traffic across web servers for high availability and performance.
 * **Multi-tier applications:** Balances traffic between application tiers (web, database) for scalability.
 * **Stateful applications:** Manages sessions for applications requiring session persistence.
 * **Backend workloads:** Balances traffic to services like VMs, container instances, or Azure App Service.
