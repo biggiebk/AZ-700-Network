@@ -344,7 +344,7 @@ AFD' Routing engine allows you to define rules for managing traffic flow and con
 
 ### Securing an Origin with Azure Private Link
 
-Azure Private Link enables private, secure connections between your web app or service in a virtual network (vNet) and AFD without trafersing the public internet. This isolation protects against unauthorized access.
+Azure Private Link enables private, secure connections between your web app or service in a virtual network (vNet) and AFD without transferring the public internet. This isolation protects against unauthorized access.
 
 ### Benefits of Azure Private Link:
 
